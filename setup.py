@@ -22,7 +22,7 @@ setup(
     download_url = 'https://github.com/JulienBrn/dlc_api.git',
     package_dir={'': 'src'},
     keywords=['python'],
-    install_requires=[],
+    install_requires=["beautifullogger", "pandas"],
     #['pandas', 'matplotlib', 'PyQt5', "sklearn", "scikit-learn", "scipy", "numpy", "tqdm", "beautifullogger", "statsmodels", "mat73", "psutil"],
     python_requires=">=3.10"
 )
