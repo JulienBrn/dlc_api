@@ -18,10 +18,10 @@ class PosePredictionModel:
         else:
             print("Initializing from modelzoo {}".format(initialize))
 
-    def train(self, frames: Sequence[np.ndarray], expected: pd.DataFrame) -> None : 
+    def train(self, videos: List[str], expected: pd.DataFrame) -> None : 
         print("train called")
 
-    def predict(self, frames: Sequence[np.ndarray]) -> pd.DataFrame: 
+    def predict(self, videos: List[str]) -> pd.DataFrame: 
         print("predict called")
         return pd.DataFrame([], columns=["video", "frame_number", "bodypart1.x", "bodypart1.y", "bodypart2.x", "bodypart2.y"])
 
@@ -35,24 +35,11 @@ class PosePredictionModel:
         return res
 
 
-
-
-def evaluate(frames: Sequence[np.ndarray], predicted: pd.DataFrame, expected: pd.DataFrame) -> float:
-    print("evaluate called")
-    return np.nan
-
-def label_frames(frames: Sequence[np.ndarray], labels: pd.DataFrame) -> Sequence[np.ndarray]: #Add coloring options, legends, point size, likelyhood as colors, ... later
+def label_frames(videos: List[str], labels: pd.DataFrame) -> List[str]: #Add coloring options, legends, point size, likelyhood as colors, ... later
     print("label frames called")
     return []
 
-def mk_video(frames: Sequence[np.ndarray], name: str) -> None:
-    print("making video {} from frames".format(name))
-
-def load_video(name: str) -> Sequence[np.ndarray]: 
-    print("load video called for {}".format(name))
-    return []
-
-def ask_user_for_positions(training_frames:Sequence[np.ndarray]) -> pd.DataFrame:
+def ask_user_for_positions(videos: List[str]) -> pd.DataFrame:
     print("ask_user_for_positions called")
-    return pd.DataFrame([], columns=["bodypart1.x", "bodypart1.y", "bodypart2.x", "bodypart2.y"])
+    return pd.DataFrame([], columns=["video", "frame_number","bodypart1.x", "bodypart1.y", "bodypart2.x", "bodypart2.y"])
 
